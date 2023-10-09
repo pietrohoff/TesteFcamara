@@ -1,0 +1,23 @@
+# Teste de Conhecimentos em PHP
+- Autor: Pietro Hoffchneider
+- E-mail: pietrohoff@gmail.com
+
+## Instruções
+
+1. Abra o arquivo `index.html` em seu navegador para ver o teste.
+
+2. Para interagir com os exemplos práticos, será necessário utilizar um servidor web local ou remoto para executar os códigos PHP.
+
+    - Para desenvolver os exemplos, utilizei na minha maquina o docker, executando o arquivo `docker-compose.yml`;
+    - Pra executar o arquivo `docker-compose.yml` utilizei o comando `docker-compose up -d`
+
+## Estrutura de Arquivos
+
+A estrutura de arquivos deste projeto é a seguinte:
+
+- `index.html`: O arquivo HTML principal que contém o teste e a interface do usuário.
+- `css/styles.css`: Um arquivo CSS para estilizar a página.
+- `js/script.js`: Um arquivo JavaScript que controla os exemplos práticos.
+
+
+

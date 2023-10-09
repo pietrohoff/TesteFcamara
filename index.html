@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste de Conhecimentos em PHP</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+
+<body>
+    <h1>Teste de Conhecimentos em PHP</h1>
+    <ol>
+        <li>
+            <strong>Pergunta 1:</strong> Qual é a diferença entre `==` e `===` em PHP?
+
+            <p>
+                A principal diferença entre <code>==</code> e <code>===</code>, é que utilizamos o operador
+                <code>==</code>
+                para verificar se os valores são iguais, realizando conversões de tipos quando
+                necessário.
+            </p>
+            <p>
+                Por outro lado, utilizamos o operador <code>===</code> para verificar se os valores e os tipos
+                são estritamente iguais, sem realizar conversões de tipos.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="info" id="info-eq"><code>==</code></td>
+                        <td>Verifica a igualdade de valor, convertendo os tipos se necessário.</td>
+                    </tr>
+                    <tr>
+                        <td class="info" id="info-strict-eq"><code>===</code></td>
+                        <td>Verifica a igualdade de valor e tipo (sem conversão de tipos).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <i>Clique sobre os operadores para obter um exemplo pratico</i>
+        </li>
+
+        <li>
+            <strong>Pergunta 2:</strong> Qual é a saída deste código em PHP?
+            <br />
+            <strong>Código:</strong>
+            <pre>
+
+                $x = 5;
+                $y = 10;
+                echo $x + $y . "10";
+            </pre>
+
+            <p>
+                A saída deste código é <b>1510</b> pois nesta expressão <code>$x + $y</code> é somado o valor "5 + 10"
+                resultando em "15", em seguida o valor é concatenado a string "10" resultando no valor <b>1510</b>.
+                Clique no botão "Executar exemplo" para ver
+                o resultado em um exemplo pratico.
+            </p>
+
+            <button id="executar-exemplo-concatenar">Executar exemplo</button>
+        </li>
+        <li>
+            <strong>Pergunta 3:</strong> Como você incluir um arquivo em PHP?
+            <p>
+                Existem duas maneiras que se pode incluir um arquivo PHP, utilizando <code>include</code> e
+                <code>require</code>, utilizamos o <code>require</code> para que caso ele não encontre o arquivo
+                que esta sendo incluído, ele emitirá um ERROR, fazendo a aplicação parar exatamente naquele ponto,
+                já o <code>require</code> apenas emite um WARNING, seguindo executando o resto do script.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operador</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>include</code></td>
+                        <td>inclui ou importar um arquivo, apresneta um <code>WARNING</code> se o arquivo especificado
+                            não for encontrado</td>
+                    </tr>
+                    <tr>
+                        <td><code>require</code></td>
+                        <td>inclui ou importar um arquivo, apresneta um <code>ERROR</code> se o arquivo especificado não
+                            for encontrado</td>
+                    </tr>
+                    <tr>
+                        <td><code>include_once</code></td>
+                        <td>inclui apenas uma vez um arquivo, apresneta um <code>WARNING</code> se o arquivo
+                            especificado não for encontrado</td>
+                    </tr>
+                    <tr>
+                        <td><code>require_once</code></td>
+                        <td>inclui apenas uma vez um arquivo, apresneta um <code>ERROR</code> se o arquivo especificado
+                            não for encontrado</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Além disso existem outras duas maneiras que se pode incluir um arquivo PHP, utilizando
+                <code>include_once</code> e <code>require_once</code>, utilizando para evitará possíveis
+                problemas como variáveis sobre escritas ou que funções e classes sejam redeclaradas causando
+                um erro no código, visto que o arquivo será incluído apenas uma vez na execução do código.
+            </p>
+            <button id="executar-exemplo-include">Executar exemplo</button>
+        </li>
+        <li>
+            <strong>Pergunta 4:</strong> Qual a diferença entre `GET` e `POST` em relação ao envio de dados em uma
+            solicitação HTTP?
+            <p>
+                A diferença entre <code>GET</code> e <code>POST</code>, está na forma como os dados são enviados.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Descrição</th>
+                        <th>Exemplo Prático</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>Envia os dados como parte da URL.</td>
+                        <td>
+                            <a href="./php/exemplo_get.php?produto=notebook">Visualizar detalhes do notebook</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>POST</td>
+                        <td>Envia os dados no corpo da solicitação.</td>
+                        <td>
+                            <form action="./php/exemplo_post.php" method="post">
+                                <label for="produto">Produto:</label>
+                                <input type="text" name="produto" id="produto">
+                                <input type="submit" value="Enviar">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                Em uma requisição <code>GET</code> os dados são enviados via URL e geralmente são limitados a menos de
+                2.000 caractere, já uma requisição <code>POST</code> é enviado no corpo de requisição HTTP e não podem
+                ser
+                visto através da URL, além disso o método <code>POST</code> pode lidar com um grande volume de dados.
+            </p>
+        </li>
+        <li>
+            <strong>Pergunta 5:</strong> Como você verifica se uma variável
+            está definida em PHP?
+            <p>
+                Para verificar se uma variável esta definida em PHP podemos utilizar a função <code>isset()</code>
+                que verifica de a veriavel foi declarada e se o valor dela nao é nullo, esta função retorna
+                <code>true</code>
+                se a variafel seta definida e se nao estiver definida ela retornara <code>false</code>. Clique no botão
+                "Executar exemplo"
+                para ver o resultado em um exemplo pratico e tambem entender algumas outras formas de verificar
+                variaveis.
+            </p>
+            <button id="executar-exemplo-vazio">Executar exemplo</button>
+        </li>
+        <li>
+            <strong>Pergunta 6:</strong> O que é a função `unset()` em PHP e
+            como ela é usada?
+            <p>
+                A função <code>unset()</code> é utilizada para deletar uma variável, ou seja esta função remove qualquer
+                valor que esteja
+                assisado ao nome da variável, fazendo com que a variável não fique mais definida. a sintaxe desta função
+                pode
+                ser executada da seguinte maneira:
+            </p>
+            <pre>
+
+                unset($variavel);
+            </pre>
+            <p>
+                Outro detalhe que é importante, é que quando uma variável é destruída com <code>unset()</code> ela não
+                perde apenas o
+                seu valor mais também a
+                variável em si. Clique no botão "Executar exemplo" para ver o resultado em um exemplo pratico.
+            </p>
+            <button id="executar-exemplo-remover">Executar exemplo</button>
+        </li>
+    </ol>
+    <ol start="7">
+        <li>
+            <strong>Pergunta 7:</strong> Suponha que você tenha uma tabela
+            chamada `produtos` com as colunas `id`, `nome`, `preco` e
+            `data_criacao`. Escreva uma consulta SQL para selecionar o nome
+            e o preço dos produtos com preço superior a 100 e ordenados pelo
+            preço em ordem decrescente.
+            <p>
+                Para fazer uma consulta SQL para selecionar o nome e o preço dos produtos com preço superior a 100 e
+                ordenados pelo preço em ordem decrescente, devamos executar a seguinte consulta:
+            </p>
+            <pre>
+
+                SELECT nome, preco
+                FROM produtos
+                WHERE preco > 100
+                ORDER BY preco DESC; 
+            </pre>
+        </li>
+        <li>
+            <strong>Pergunta 8:</strong> Você deseja criar uma classe PHP
+            chamada `Logger` que possa ser usada para registrar mensagens de
+            log em um arquivo. Como você implementaria essa classe?
+            <p>
+                <b>1. Declarar classe:</b> Para implementar esta classe primeiro eu iria começar declarando a classe
+                <code>Logger</code>
+            </p>
+            <pre>
+
+                class Logger {
+            </pre>
+            <p>
+                <b>2. Definir uma propriedade privada:</b> Apos isso eu iria definir dentro da classe uma propriedade
+                privada <code>$logFile </code>
+                esta propriedade irá armazenar o nome do arquivo de log onde as mensagens serão salvas.
+            </p>
+            <pre>
+
+                private $logFile;
+            </pre>
+            <p>
+                <b>3. Criar o construtor da classe:</b> o construtor da classe <code>Logger</code> é quem recebe o
+                parâmetro <code>$logFile</code> que é o nome
+                do arquivo de <code>log</code> onde as mensagens irão ficar armazenadas, o construtor irá atribuir esse
+                valor a propriedade <code>$logFile</code>
+            </p>
+            <pre>
+
+                public function __construct($logFile) {
+                    $this->logFile = $logFile;
+                }
+            </pre>
+            <p>
+                <b>4. Criar um método publico:</b> o método publico <code>log</code> da classe será usado para registra
+                uma mensagem no arquivo de <code>log</code>, a variável
+                <code>$timestamp</code> obtém a data e hora exata do registro, já o
+                <code>file_put_contents($this->logFile, $logEntry, FILE_APPEND)</code> ira escrever a entrada
+                do <code>log</code> no arquivo de <code>log</code>.
+            </p>
+            <pre>
+
+                public function log($message) {
+                    $timestamp = date("Y-m-d H:i:s");
+                    $logEntry = "[$timestamp] $message\n";
+                    file_put_contents($this->logFile, $logEntry, FILE_APPEND);
+                }
+            </pre>
+            <p>Apresentado do o código final desta forma:</p>
+            <pre>
+
+                class Logger {
+                    private $logFile;
+            
+                    public function __construct($logFile) {
+                        $this->logFile = $logFile;
+                    }
+            
+                    public function log($message) {
+                        $timestamp = date("Y-m-d H:i:s");
+                        $logEntry = "[$timestamp] $message\n";
+                        file_put_contents($this->logFile, $logEntry, FILE_APPEND);
+                    }
+                }
+            </pre>
+            <button id="executar-exemplo-logger">Executar demonstração da classe Logger</button>
+        </li>
+        <li>
+            <strong>Pergunta 9:</strong> Qual é a diferença entre `INNER
+            JOIN` e `LEFT JOIN` em SQL?
+            <p>A principal diferença entre <code>INNER JOIN</code> e <code>LEFT JOIN</code> é que o
+                <code>INNER JOIN</code> retorna apenas os dados nas duas tabelas
+                envolvidas na junção, ja o <code>LEFT JOIN</code> retorna os dados da tabela a esquerda(a primeira
+                tabela mencionadna na consulta) e os dados da junção da
+                tabela da direita(Segunda tabela mencionada na consulta)
+            </p>
+            <button id="executar-exemplo-join">Ver exemplo</button>
+        </li>
+        <li>
+            <strong>Pergunta 10:</strong> Qual é a finalidade da função
+            `spl_autoload_register` em PHP?
+            <p>
+                A função <code>spl_autoload_register</code> geralmente é usada para registrar funções de carregamento
+                automático que são responsáveis por
+                carregar automaticamente as classes. por exemplo, vamos utilizar a classe criada na resposta anterior
+            </p>
+            <p>
+                Vamos supor que temos um arquivo chamado <code>exemplo_autloder.php</code>
+            </p>
+            <pre>
+
+
+                    function autoloadMinhaClasse($nomeDaClasse) {
+                        $caminhoDoArquivo = './php/' . strtolower($nomeDaClasse) . '.php';
+                        if (is_file($caminhoDoArquivo)) {
+                            include_once $caminhoDoArquivo;
+                        }
+                    }
+                    spl_autoload_register('autoloadMinhaClasse');
+                
+            </pre>
+            <p>Podemos utilizar no index.php</p>
+            <pre>
+
+
+                    require 'exemplo_autloder';
+
+                    $logger = new Logger();
+                    $logger->log();
+            
+            </pre>
+            <p>
+                Podemos perceber que não foi declarada a classe <code>Logger</code>, então a função
+                <code>autoload</code> vai tentar buscar o
+                arquivo que está na pasta <code>php/logger.php</code> se o arquivo não for encontrado irá retornar um
+                erro.
+            </p>
+        </li>
+        <li>
+            <strong>Pergunta 11:</strong> Você está lidando com um grande
+            conjunto de dados em PHP e precisa executar uma operação que
+            pode levar muito tempo. Como você lidaria com isso para garantir
+            que o script não exceda o tempo limite de execução do PHP?
+            <p>
+                Para não exceder o tempo limite de execução do PHP existe diversas formas de lidar com isso, a primeira
+                delas é aumentar o tempo limite de execução com a função <code>set_time_limit</code>, entretanto isso
+                pode
+                comprometer a performance do script, causando lentidões ou ate mesmo travando o servidor.
+            </p>
+            <p>
+                Uma forma de não exceder o tempo limite de execução do PHP é dividir as tarefas em pequenas partes,
+                permitindo que trabalhamos com um grande volume
+                de dados de forma eficaz.
+            </p>
+        </li>
+    </ol>
+    <ol start="12">
+        <li>
+            <strong>Pergunta 12:</strong> Suponha que você tenha uma tabela
+            chamada `produtos` com as colunas `id`, `nome`, `preco` e
+            `data_criacao`. Escreva uma consulta SQL para selecionar o nome
+            e o preço dos produtos com preço superior a 100 e ordenados pelo
+            preço em ordem decrescente.
+            <br />
+            <p>
+                Para fazer uma consulta SQL para selecionar o nome e o preço dos produtos com preço superior a 100 e
+                ordenados pelo preço em ordem decrescente, devamos executar a seguinte consulta:
+            </p>
+
+            <pre>
+
+                SELECT nome, preco
+                FROM produtos
+                WHERE preco > 100
+                ORDER BY preco DESC; 
+            </pre>
+        </li>
+        <li>
+            <strong>Pergunta 13:</strong> Qual é a finalidade da função
+            `spl_autoload_register` em PHP?
+            <br />
+            <p>
+                A função <code>spl_autoload_register</code> geralmente é usada para registrar funções de carregamento
+                automático que são responsáveis por
+                carregar automaticamente as classes. por exemplo, vamos utilizar a classe criada na resposta anterior
+            </p>
+            <p>
+                Vamos supor que temos um arquivo chamado <code>exemplo_autloder.php</code>
+            </p>
+            <pre>
+
+
+                    function autoloadMinhaClasse($nomeDaClasse) {
+                        $caminhoDoArquivo = './php/' . strtolower($nomeDaClasse) . '.php';
+                        if (is_file($caminhoDoArquivo)) {
+                            include_once $caminhoDoArquivo;
+                        }
+                    }
+                    spl_autoload_register('autoloadMinhaClasse');
+                
+            </pre>
+            <p>Podemos utilizar no index.php</p>
+            <pre>
+
+
+                    require 'exemplo_autloder';
+
+                    $logger = new Logger();
+                    $logger->log();
+            
+            </pre>
+            <p>
+                Podemos perceber que não foi declarada a classe <code>Logger</code>, então a função
+                <code>autoload</code> vai tentar buscar o
+                arquivo que está na pasta <code>php/logger.php</code> se o arquivo não for encontrado irá retornar um
+                erro.
+            </p>
+        </li>
+    </ol>
+    <!-- Lightbox para exibir a imagem -->
+    <div class="lightbox-container" id="lightbox-info-eq">
+        <button class="close-button" id="fechar-lightbox-info-eq">X</button>
+        <img src="./img/imagem_Exemplo_Iguais.png" alt="Imagem" class="lightbox-image">
+    </div>
+    <div class="lightbox-container" id="lightbox-info-strict-eq">
+        <button class="close-button" id="fechar-lightbox-info-strict-eq">X</button>
+        <img src="./img/imagem_Exemplo_Nao_Iguais.png" alt="Imagem" class="lightbox-image">
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
